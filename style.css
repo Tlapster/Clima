@@ -18,6 +18,9 @@
 }
 
 /*Primera Parte*/ 
+container{
+  background-image:""
+}
   .topInfo{
     background-color: var(--azulMedio);
     height: fit-content;
@@ -265,6 +268,63 @@
 
 /*Inicia el responsive*/
 
-@media screen {
+@media screen and (min-width:807px) {
+  #container{
+    display: grid;
+    grid-template-areas: 
+     "a b "
+     "a c ";
+    max-height: 1023px;
+  }
+  /*Primera Parte*/ 
+  .topInfo{
+    background-color: var(--azulMedio);
+    height: 800px;
+    padding: 1rem .5rem;
+    width: 459px;
+    grid-area: a;
+  }
   
+  .climaToday{
+    margin: auto;
+    justify-content: center;
+    align-content: center;
+    grid-area: c c;
+    
+  }
+  #mainDateTxt{
+    padding-bottom: 20px;
+    font-size: 20px;
+  }
+
+  #predictionCards{
+    height: fit-content;
+    width: 981px;
+    background-color:var(--azulObscuro);
+    padding-bottom: 50px;
+    grid-area: b;
+  }
+
+
+  #infoClima{
+    height: max-content;
+    background-color: var(--azulObscuro) ;
+    
+    flex-wrap: wrap;
+  }
+  #mainInfoClimaCards{
+    display: grid;
+    grid-template-areas:
+    "a a"
+    "b1 b2"
+    "c1 d1"
+    "e1 e1";
+    margin: auto;
+    flex-wrap: wrap;
+    width: 80%;
+    
+  }
+  #tittleToday{
+    grid-area: a;
+  }
 }
