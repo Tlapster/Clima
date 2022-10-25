@@ -21,12 +21,10 @@
   .topInfo{
     background-color: var(--azulMedio);
     height: fit-content;
-    
     padding: 1rem .5rem;
   }
   .search{
     display: flex;
-    max-height: fit-content;
     justify-content: space-between;
   }
   
@@ -34,23 +32,21 @@
     border: 1px solid #6e707a64;
     background-color: var(--azulBoton);
     border-radius: 50%;
-    
   }
   .svgGeo{
     fill: var(--blancoTxt);
     scale: 80%;
-    
-
   }
   #divSvg{
     border-radius: 50px;
     background-color: var(--geoBlue);
+  }
+  #btnSearch{
+    background-color: var(--grisMedio);
+    color:var(--blancoTxt);
+    border: var(--grisMedio);
+    width: 161px;
     height: 40px;
-    margin: auto 0;
-    width: 40px;
-    justify-items: center;
-    align-items: center ;
-
   }
   .climaToday{
     margin: auto;
@@ -117,8 +113,6 @@
   #positionVector{
     fill: var(--blancoTxt);
     scale: 70%;
-    
-    
   }
   
   /*Segunda Parte - 5 días*/ 
@@ -240,6 +234,7 @@
   font-size: 64px;
   line-height: 75px;
   gap: 5px;
+  padding-top: 1.5rem;
 }
 #windData p{
   font-size: 36px;
@@ -266,4 +261,10 @@
   margin: auto;
   width: 80%;
   margin-top: 1rem;
+}
+
+/*Inicia el responsive*/
+
+@media screen {
+  
 }

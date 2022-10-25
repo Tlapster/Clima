@@ -90,7 +90,7 @@ const infoClimaCards = (data) => {
         <br>
 
         <h6>Created by Kolob Tlapale - GitHub</h6> 
-        <br 
+        <br> 
 
     `;
 }
