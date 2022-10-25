@@ -1,0 +1,269 @@
+*{
+    box-sizing: border-box;
+    font-family: var(--font-Raleway);
+}
+:root{
+    /*fonts*/
+    --font-Raleway: 'Raleway', sans-serif;
+
+    /*Colores*/    
+    --azulObscuro:  #100E1D;
+    --azulMedio: #1E213A;
+    --grisMedio: #6E707A;
+    --grisTxt: #A09FB1;
+    --blancoTxt: #E7E7EB;
+    --azulBoton:#585676;
+    --geoBlue: #88869D;
+    
+}
+
+/*Primera Parte*/ 
+  .topInfo{
+    background-color: var(--azulMedio);
+    height: fit-content;
+    
+    padding: 1rem .5rem;
+  }
+  .search{
+    display: flex;
+    max-height: fit-content;
+    justify-content: space-between;
+  }
+  
+  #geoBtn{
+    border: 1px solid #6e707a64;
+    background-color: var(--azulBoton);
+    border-radius: 50%;
+    
+  }
+  .svgGeo{
+    fill: var(--blancoTxt);
+    scale: 80%;
+    
+
+  }
+  #divSvg{
+    border-radius: 50px;
+    background-color: var(--geoBlue);
+    height: 40px;
+    margin: auto 0;
+    width: 40px;
+    justify-items: center;
+    align-items: center ;
+
+  }
+  .climaToday{
+    margin: auto;
+    justify-content: center;
+    align-content: center;
+  }
+  #mainDateTxt{
+    padding-bottom: 20px;
+    font-size: 20px;
+  }
+  #imgHero{
+    text-align: center;
+    margin-top: 2rem;
+    margin-bottom: 1.5rem;
+    
+  }
+  #imgHero img{
+    object-fit: cover;
+    width: 150px;
+  }
+  .mainTxt{
+    justify-content: center;
+    text-align: center;
+    display: flex;
+    color: var(--blancoTxt);
+    font-size: 140px;
+    font-weight: 500;
+  }
+  .temp{
+    display: flex;
+    justify-content: center;
+  }
+  .mainTxt_h3{
+    color: var(--grisTxt);
+    font-size: 46px;
+    font-weight: 300;
+    line-height: 200px;
+  }
+  #climaMainTxt{
+    font-size: 36px;
+    color: var(--grisTxt);
+    text-align: center;
+    font-weight: 700;
+  }
+  #mainDateTxt{
+    color: var(--grisTxt);
+    font-size: 18px;
+    font-weight: 500;
+    text-align: center;
+    margin-top: 2rem;
+  }
+  #geoCity{
+    display: flex;
+    color: var(--geoBlue);
+    justify-content: center;
+    align-items: center;
+    margin-top: .8rem;
+    margin-bottom: .8rem;
+  }
+  #geocity h5{
+    font-weight: 600;
+    margin-top: 10px;
+  }
+  #positionVector{
+    fill: var(--blancoTxt);
+    scale: 70%;
+    
+    
+  }
+  
+  /*Segunda Parte - 5 días*/ 
+  #predictionCards{
+    height: fit-content;
+    background-color:var(--azulObscuro);
+    padding-bottom: 50px;
+  }
+  .preDivCards{
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    width: 90%;
+    gap: 30px;
+    justify-content: center;
+    padding-top: 50px;
+  }
+  .climaDay{
+    background-color: var(--azulMedio);
+    justify-content: center;
+    width: 120px;
+    height: 177px;
+    color: var(--blancoTxt);
+    text-align: center;
+    
+  }
+  .climaDay h5{
+    padding: 10px 0;
+  }
+.imgPreCard{
+  
+  object-fit: fill;
+  margin: auto;
+  padding-bottom: 2rem;
+}
+.temps{
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+.temp_max{
+  text-align: center;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 18.78px;
+}
+.temp_min{
+  text-align: center;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 17.78px;
+  color: var(--grisTxt);
+}
+
+/*Tercer Parte - current clima data*/ 
+#infoClima{
+  height: max-content;
+  background-color: var(--azulObscuro) ;
+
+}
+#infoClima h6{
+  color: var(--grisTxt);
+  font-weight: 700;
+  font-size: 14px;
+  text-align: center;
+
+}
+
+#tittleToday{
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 28px;
+  color: var(--blancoTxt);
+  padding: 1rem 0 1rem 1.5rem;
+  
+}
+#climaCardStatus{
+  width: 328px;
+  height: 204px;
+  background-color: var(--azulMedio);
+  margin: auto;
+ margin-bottom: 2rem;
+ align-items: center;
+  
+}
+#climaCardStatus h5{
+  color: var(--blancoTxt);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 19px;
+  margin: .5rem 0;
+  text-align: center;
+  padding-top: 1rem;
+}
+#climaCardStatusV2{
+  width: 328px;
+  height: 159px;
+  background-color: var(--azulMedio);
+  margin: auto;
+ margin-bottom: 2rem;
+  
+}
+#climaCardStatusV2 h5{
+  color: var(--blancoTxt);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 19px;
+  margin: .5rem 0;
+  text-align: center;
+  padding-top: 1rem;
+}
+#windData{
+  color: var(--blancoTxt);
+  justify-content: center;
+  align-items: baseline;
+  margin: auto;
+  display: flex;
+  font-weight: 700;
+  font-size: 64px;
+  line-height: 75px;
+  gap: 5px;
+}
+#windData p{
+  font-size: 36px;
+  font-weight: 300;
+  line-height: 42px;
+} 
+#humidityData{
+  color: var(--blancoTxt);
+  justify-content: center;
+  align-items: baseline;
+  margin: auto;
+  display: flex;
+  font-weight: 700;
+  font-size: 64px;
+  line-height: 75px;
+  gap: 5px;
+}
+#humidityData p{
+  font-size: 36px;
+  font-weight: 300;
+  line-height: 42px;
+} 
+.progress{
+  margin: auto;
+  width: 80%;
+  margin-top: 1rem;
+}
