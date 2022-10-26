@@ -19,12 +19,20 @@
 
 /*Primera Parte*/ 
 container{
-  background-image:""
+  
 }
   .topInfo{
     background-color: var(--azulMedio);
     height: fit-content;
     padding: 1rem .5rem;
+    background-image: url(./imgs/Cloud-background.png);
+    background-position:top;
+    background-repeat: no-repeat;
+    
+  }
+  #imgBack{
+    position: relative;
+    z-index: auto;
   }
   .search{
     display: flex;
@@ -304,7 +312,36 @@ container{
     padding-bottom: 50px;
     grid-area: b;
   }
-
+  /*Segunda Parte - 5 días*/ 
+  #predictionCards{
+    height: fit-content;
+    background-color:var(--azulObscuro);
+    padding-bottom: 20px;
+  }
+  .preDivCards{
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    width: 90%;
+    gap: 30px;
+    justify-content: center;
+    padding-top: 30px;
+  }
+  .climaDay{
+    background-color: var(--azulMedio);
+    justify-content: center;
+    width: 120px;
+    height: 177px;
+    color: var(--blancoTxt);
+    text-align: center;
+    
+  }
+  .climaDay h5{
+    padding: 10px 0;
+  }
+  .imgPreCard{
+    padding-bottom: 1.8rem;
+  }
 
   #infoClima{
     height: max-content;
@@ -326,5 +363,11 @@ container{
   }
   #tittleToday{
     grid-area: a;
+    
+      font-weight: 600;
+      font-size: 20px;
+      padding: .8rem 0 1rem 1.5rem;
+      
+    }
   }
 }
