@@ -15,6 +15,7 @@ console.log(fechaHoy);
 let diaSemana = ['Sun', 'Mon', 'Tue', 'Wed', 'Thur', 'Fri', 'Sat'];
 let mesAnio = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct','Nov','Dic'];
 
+let currentTime = new Date();
 
 geolocation.getCurrentPosition((position) =>{
     const {latitude, longitude} = position.coords;
@@ -75,8 +76,8 @@ const infoClimaCards = (data) => {
 
             <div id="climaCardStatusV2">
                 <h5>Visibility</h5>
-                <div id="humidityData">${parseFloat( data.visibility)} 
-                <p> m</p></div>
+                <div id="humidityData">${parseInt(data.visibility)/1000} 
+                <p> Km</p></div>
             </div>
 
             <div id="climaCardStatusV2">
@@ -103,7 +104,7 @@ prediccion.getCurrentPosition((position) =>{
     .then(datap => {
             console.log(datap);
 
-            let fecha =22;
+            let fecha = fechaHoy.getDate();
             let filteredList = datap.list.filter( (clima) => {
                 console.log(clima.dt_txt.substr(8, 2));
                 if(parseInt(clima.dt_txt.substr(8, 2)) != fecha){
@@ -133,17 +134,37 @@ const pCards = (filteredList) => {
             </div>
         </div>
         <div class="climaDay">
-            <h5>${filteredList[3].dt_txt}</h5>
+            <h5>${fechasCards(2)}</h5>
+            <div class="imgPreCard"><img src="https://openweathermap.org/img/w/${filteredList[3].weather[0].icon}.png" alt="open eeather icon"></div>
+            <div class="temps">
+            <h1 class="temp_max">${parseInt(filteredList[1].main.temp_max)} ºC</h1>
+    
+            <h1 class="temp_min">${parseInt(filteredList[1].main.temp_min)} ºC</h1>
+            </div>
+        </div>
+
+        <div class="climaDay">
+            <h5>${fechasCards(3)}</h5>
+            <div class="imgPreCard"><img src="https://openweathermap.org/img/w/${filteredList[2].weather[0].icon}.png" alt="open eeather icon"></div>
+            <div class="temps">
+            <h1 class="temp_max">${parseInt(filteredList[2].main.temp_max)} ºC</h1>
+    
+            <h1 class="temp_min">${parseInt(filteredList[2].main.temp_min)} ºC</h1>
+            </div>
+         </div>
+
+         <div class="climaDay">
+            <h5>${fechasCards(4)}</h5>
             <div class="imgPreCard"><img src="https://openweathermap.org/img/w/${filteredList[3].weather[0].icon}.png" alt="open eeather icon"></div>
             <div class="temps">
             <h1 class="temp_max">${parseInt(filteredList[3].main.temp_max)} ºC</h1>
     
             <h1 class="temp_min">${parseInt(filteredList[3].main.temp_min)} ºC</h1>
             </div>
-        </div>
+         </div>
 
-        <div class="climaDay">
-            <h5>${filteredList[4].dt_txt}</h5>
+         <div class="climaDay">
+            <h5>${fechasCards(5)}</h5>
             <div class="imgPreCard"><img src="https://openweathermap.org/img/w/${filteredList[4].weather[0].icon}.png" alt="open eeather icon"></div>
             <div class="temps">
             <h1 class="temp_max">${parseInt(filteredList[4].main.temp_max)} ºC</h1>
@@ -151,28 +172,58 @@ const pCards = (filteredList) => {
             <h1 class="temp_min">${parseInt(filteredList[4].main.temp_min)} ºC</h1>
             </div>
          </div>
-
-         <div class="climaDay">
-            <h5>${filteredList[5].dt_txt}</h5>
-            <div class="imgPreCard"><img src="https://openweathermap.org/img/w/${filteredList[5].weather[0].icon}.png" alt="open eeather icon"></div>
-            <div class="temps">
-            <h1 class="temp_max">${parseInt(filteredList[5].main.temp_max)} ºC</h1>
-    
-            <h1 class="temp_min">${parseInt(filteredList[5].main.temp_min)} ºC</h1>
-            </div>
-         </div>
-
-         <div class="climaDay">
-            <h5>${filteredList[6].dt_txt}</h5>
-            <div class="imgPreCard"><img src="https://openweathermap.org/img/w/${filteredList[6].weather[0].icon}.png" alt="open eeather icon"></div>
-            <div class="temps">
-            <h1 class="temp_max">${parseInt(filteredList[6].main.temp_max)} ºC</h1>
-    
-            <h1 class="temp_min">${parseInt(filteredList[6].main.temp_min)} ºC</h1>
-            </div>
-         </div>
     </div>
    
 
     `; 
 }
+
+function formatDate(date) {
+    
+    let diaN = date.getDate();
+  
+    let mesindex = date.getMonth();
+    let meses = [
+      "Ene",
+      "Feb",
+      "Mar",
+      "Abr",
+      "May",
+      "Jun",
+      "Jul",
+      "Ago",
+      "Sep",
+      "Oct",
+      "Nov",
+      "Dic"
+    ];
+    let mes = meses[mesindex];
+    let dayIndex = date.getDay();
+    let days = [
+      "Dom",
+      "Lun",
+      "Mar",
+      "Mier",
+      "Jue",
+      "Vie",
+      "Sab"
+    ];
+    let day = days[dayIndex];
+  
+    return `${day} ${diaN} ${mes}`;
+  }
+
+  function fechasCards(sum){
+    
+    let nuevoDia = "";
+  
+  // ciclo para la escritura en el dom de los siguientes 4 dias en el forecast 
+    
+      let tomorrow =  new Date(); //26 10 2022
+      tomorrow.setDate(currentTime.getDate() + sum) //29 10 2022
+        nuevoDia = (formatDate(tomorrow)); // solo di el formato de fecha de java
+        return nuevoDia
+      
+    }
+    
+  
