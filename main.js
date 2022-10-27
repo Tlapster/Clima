@@ -7,16 +7,19 @@ const imgHero = document.getElementById('imgHero');
 const mainTxt = document.getElementById('mainTxt');
 const infoClima = document.getElementById('infoClima');
 const prediccion = navigator.geolocation;
-const preCards = document.getElementById('predictionCards')
-const mainDateTxt = document.getElementById('mainDateTxt')
-const btnGeoLocation = document.getElementById('aSvg')
-
+const preCards = document.getElementById('predictionCards');
+const mainDateTxt = document.getElementById('mainDateTxt');
+const btnGeoLocation = document.getElementById('aSvg');
+const london = document.getElementById('london');
 let fechaHoy = new Date();
 console.log(fechaHoy);
 let diaSemana = ['Sun', 'Mon', 'Tue', 'Wed', 'Thur', 'Fri', 'Sat'];
 let mesAnio = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct','Nov','Dic'];
 
 let currentTime = new Date();
+
+
+
 
 
 function positionToday() { geolocation.getCurrentPosition((position) =>{
@@ -30,6 +33,23 @@ function positionToday() { geolocation.getCurrentPosition((position) =>{
         console.log(data);
         climaHoyCard(data);
         infoClimaCards(data);
+    } )
+    
+    
+});
+}
+
+function positionLondonToday() { geolocation.getCurrentPosition((position) =>{
+    const {latitude, longitude} = position.coords;
+    const units = "metric";
+    const URLLondon = `https://api.openweathermap.org/data/2.5/weather?lat=51.5085&lon=-0.1257&main&appid=${KEY}&units=${units}&icons`
+
+    fetch(URLLondon)
+    .then(response => response.json())
+    .then(data_London =>{
+        
+        console.log(data_London);
+        
     } )
     
     
