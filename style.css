@@ -82,7 +82,11 @@ a:focus {
   overflow-y: scroll;
   box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
 }
-
+.btnSearch_v2{
+  background-color: var(--grisMedio);
+    color:var(--blancoTxt);
+    border: var(--grisMedio);
+}
 #sidebar.active {
   left: 0;
 }
