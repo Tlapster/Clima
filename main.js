@@ -9,6 +9,7 @@ const infoClima = document.getElementById('infoClima');
 const prediccion = navigator.geolocation;
 const preCards = document.getElementById('predictionCards')
 const mainDateTxt = document.getElementById('mainDateTxt')
+const btnGeoLocation = document.getElementById('aSvg')
 
 let fechaHoy = new Date();
 console.log(fechaHoy);
@@ -17,7 +18,8 @@ let mesAnio = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'O
 
 let currentTime = new Date();
 
-geolocation.getCurrentPosition((position) =>{
+
+function positionToday() { geolocation.getCurrentPosition((position) =>{
     const {latitude, longitude} = position.coords;
     const units = "metric";
     const URL = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&main&appid=${KEY}&units=${units}&icons`
@@ -31,8 +33,12 @@ geolocation.getCurrentPosition((position) =>{
     } )
     
     
-})
+});
+}
 
+positionToday();
+
+btnGeoLocation.addEventListener('click', positionToday);
 
 const climaHoyCard = (data) => {
         climaHoy.innerHTML = `
